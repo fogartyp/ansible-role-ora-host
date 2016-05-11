@@ -65,12 +65,6 @@
     tags:
      - user
 
-  - name: User | bash_profile
-    template: src=bash_profile.j2 dest=/home/{{ item.username }}/.bash_profile owner={{ item.username }} mode=0644
-    with_items: oracle_users
-    tags:
-     - user
-
   - name: User | Add Grid user
     user: name={{ item.username }}  group={{ item.primgroup }} groups={{ item.othergroups }} uid={{ item.uid }} generate_ssh_key=yes append=yes state=present password={{ item.passwd }}
     when: role_separation
