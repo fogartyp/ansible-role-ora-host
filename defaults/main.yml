@@ -63,7 +63,7 @@
   device_persistence: udev
   install_os_packages: true
   disable_selinux: true
-  disable_iptables: true
+  disable_iptables: false
 
 
   host_fs_layout:    # Sets up filesystem on host. If storage_type=FS under oracle_databases, this is where the mapping between device/fs is described
